@@ -150,7 +150,7 @@ h1 {
 .vacancy-publishing-date {
     position: absolute;
     right: 20px;
-    bottom: 10px;
+    bottom: 12px;
     font-size: 13px;
     color: #7a857a;
 }
@@ -165,6 +165,7 @@ h1 {
 
 .vacancy-link,
 .vacancy-company {
+    display: inline-block;
     color: #0066cc;
     text-decoration: none;
 }
@@ -187,4 +188,18 @@ h1 {
     font-size: 18px;
     color: #ff3333;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    .vacancy .vacancy-link,
+    .vacancy .vacancy-company {
+        font-size: 12px;
+    }
+
+    .vacancy .vacancy-publishing-date {
+        position: static;
+        display: block;
+        margin-top: 10px;
+        color: #7a857a;
+    }
 }
