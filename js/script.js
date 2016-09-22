@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
 
     function showHideInfo() {
         var vacancyDetails = this.querySelector(".js-vacancy-details");
-        console.log(vacancyDetails);
+        // console.log(vacancyDetails);
         if (!vacancyDetails.classList.contains("is-visible")) {
             vacancyDetails.classList.add("is-visible");
             vacancyDetails.parentNode.classList.add("vacancy-expanded");
@@ -31,7 +31,7 @@ window.addEventListener("load", function() {
         if (xhrExperienceValues.status === 200) {
             var experienceObjsArray = JSON.parse(xhrExperienceValues.responseText).experience,
                 i = 0;
-            console.log(experienceObjsArray);
+            // console.log(experienceObjsArray);
             for (i = 0; i < experienceObjsArray.length; i++) {
                 var option = document.createElement("option");
                 option.innerHTML = experienceObjsArray[i].name;
@@ -52,7 +52,7 @@ window.addEventListener("load", function() {
             var vacanciesArray = JSON.parse(XHR.responseText).items,
                 vacanciesNumber = (vacanciesArray.length > limit) ? limit : vacanciesArray.length,
                 vacancyBlock = {};
-            console.log(JSON.parse(XHR.responseText));
+            // console.log(JSON.parse(XHR.responseText));
 
             for (i = 0; i < vacanciesNumber; i++) {
                 vacancyBlock = document.createElement("div");
