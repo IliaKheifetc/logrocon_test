@@ -1,10 +1,10 @@
 window.addEventListener("load", function() {
     var XHR = new XMLHttpRequest(),
         xhrExperienceValues = new XMLHttpRequest(),
-        container      = document.querySelector(".container"),
-        searchField    = document.querySelector(".search-field"),
-        searchButton   = document.querySelector("[type=button]"),
-        workExperienceList = document.querySelector("select"),
+        container      = document.querySelector(".js-container"),
+        searchField    = document.querySelector(".js-keyword"),
+        searchButton   = document.querySelector(".js-search-btn"),
+        workExperienceList = document.querySelector(".js-experience-list"),
         vacancies      = {},
         regExp = new RegExp(/&|=|\?|!|#|@|\$|%|\^|\*/),
         limit = 10,
@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
         };
 
     function showHideInfo() {
-        var vacancyDetails = this.querySelector(".vacancy-details");
+        var vacancyDetails = this.querySelector(".js-vacancy-details");
         console.log(vacancyDetails);
         if (!vacancyDetails.classList.contains("is-visible")) {
             vacancyDetails.classList.add("is-visible");
@@ -72,6 +72,7 @@ window.addEventListener("load", function() {
                 name.classList.add("vacancy-name");
                 company = document.createElement("a");
                 company.classList.add("vacancy-company");
+                company.classList.add("js-link");
                 company.innerHTML = item["employer"].name;
                 company.href = item["employer"].alternate_url;
                 company.target = "_blank";
@@ -84,12 +85,14 @@ window.addEventListener("load", function() {
                 snippet = item["snippet"];
                 descriptionBlock = document.createElement("div");
                 descriptionBlock.classList.add("vacancy-details");
+                descriptionBlock.classList.add("js-vacancy-details");
                 descriptionBlock.innerHTML = '<h3>Требования</h3>' +
                                  "<p>" + snippet["requirement"] + "</p>" +
                                  "<h3>Обязанности</h3>" +
                                  "<p>" + snippet["responsibility"] + "</p>";
                 link = document.createElement("a");
                 link.classList.add("vacancy-link");
+                link.classList.add("js-link");
                 link.href = item["alternate_url"];
                 link.innerHTML = item["alternate_url"];
                 link.target = "_blank";
@@ -130,13 +133,11 @@ window.addEventListener("load", function() {
 
 
             vacancies = document.querySelectorAll(".js-vacancy");
-            console.log("vacancies");
-            console.log(vacancies);
             for (i = 0; i < vacancies.length; i++ ) {
                 vacancies[i].addEventListener("click", showHideInfo);
             }
 
-            links = document.querySelectorAll("a");
+            links = document.querySelectorAll(".js-link");
             for (i = 0; i < links.length; i++) {
                 links[i].addEventListener("click", function(event) {
                     event.stopPropagation();

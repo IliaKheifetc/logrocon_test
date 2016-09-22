@@ -50,8 +50,8 @@ h1 {
     outline: none;
 }
 
-.search-block-options > .search-field:hover,
-.search-block-options > .search-field:focus,
+.search-block-options > .search-block-keyword:hover,
+.search-block-options > .search-block-keyword:focus,
 .search-block-options > select:hover {
     background-color: #caceca;
 }
@@ -65,7 +65,7 @@ h1 {
     background-color: #afb6af;
 }
 
-.search-block-options .search-field,
+.search-block-options .search-block-keyword,
 .search-block-options select {
     box-sizing: border-box;
     width: 50%;
