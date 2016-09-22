@@ -1,3 +1,11 @@
+@font-face {
+    font-weight: normal;
+    font-family: "icon-font";
+
+    src: url("../fonts/fontello.woff2") format("woff2"),
+         url("../fonts/fontello.woff") format("woff");
+}
+
 body {
     font-size: 14px;
     font-family: "PT Sans", "Arial", sans-serif;
@@ -7,8 +15,6 @@ header {
     padding-top: 5px;
     color: #ffffff;
     background-color: #453F3C;
-    /*#747274;*/
-    /*#3D3B3C;*/
 }
 
 h1 {
@@ -83,7 +89,7 @@ h1 {
     font-size: 20px;
 }
 
-.vacancy .vacancy-name {
+.vacancy > .vacancy-name {
     width: 60%;
 }
 
@@ -108,7 +114,6 @@ h1 {
     font-size: 16px;
     color: #000000;
     background-color: #e6ccb3;
-    /*#f2f2f2;*/
 }
 
 .vacancy:hover {
@@ -118,8 +123,19 @@ h1 {
 }
 
 .vacancy .vacancy-salary {
+    position: relative;
+    padding-left: 20px;
     margin-bottom: 20px;
     font-size: 14px;
+}
+
+.vacancy .vacancy-salary::before {
+    content: "\e806";
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    font-family: "icon-font";
+    vertical-align: middle;
 }
 
 .vacancy-company {
@@ -151,10 +167,6 @@ h1 {
 .vacancy-company {
     color: #0066cc;
     text-decoration: none;
-}
-
-.vacancy-company {
-
 }
 
 .vacancy-link:hover,

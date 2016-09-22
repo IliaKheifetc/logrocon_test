@@ -103,34 +103,14 @@ window.addEventListener("load", function() {
                 // url.type = "hidden";
                 // url.value = item["url"];
 
-
                 vacancyBlock.appendChild(name);
                 vacancyBlock.appendChild(company);
                 vacancyBlock.appendChild(salary);
                 vacancyBlock.appendChild(descriptionBlock);
                 vacancyBlock.appendChild(link);
                 vacancyBlock.appendChild(publishingDate);
-                // vacancyBlock.appendChild(url);
-                // outputString = '<div class="vacancy js-vacancy">';
-                // outputString += "<h2>" + item["name"] + "</h2>" + " ";
-                // link = '<a class="vacancy-link" href="' + item["alternate_url"] + '" target="_blank">' + item["alternate_url"] + "</a>";
-                // snippet = item["snippet"];
-                // publishingDate = '<span class="vacancy-publishing-date">' + "Опубликовано " + item["published_at"].slice(0, 10) + "</span>";
-                // url = '<input type="hidden" value="' + item["url"] + '">'
-                // outputString += '<div class="vacancy-details">' +
-                //                 '<h3>Требования</h3>' +
-                //                 "<p>" + snippet["requirement"] + "</p>" +
-                //                 "<h3>Обязанности</h3>" +
-                //                 "<p>" + snippet["responsibility"] + "</p>" +
-                //                 "</div>" +
-                //                 link +
-                //                 publishingDate +
-                //                 url +
-                //                 "</div>";
-                // container.innerHTML = container.innerHTML + outputString;
                 container.appendChild(vacancyBlock);
             }
-
 
             vacancies = document.querySelectorAll(".js-vacancy");
             for (i = 0; i < vacancies.length; i++ ) {
